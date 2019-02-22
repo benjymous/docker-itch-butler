@@ -8,6 +8,8 @@ RUN apt-get update \
 		unzip \
 		ca-certificates
 
+RUN mkdir -p /opt/butler
+
 ADD getbutler.sh /opt/butler/getbutler.sh
 
 RUN chmod +x /opt/butler/getbutler.sh && /opt/butler/getbutler.sh
