@@ -9,20 +9,8 @@ RUN apt-get update \
 		unzip \
 		ca-certificates
 
-RUN mkdir -p /opt/butler/bin
-RUN cd /opt/butler/bin
+ADD getbutler.sh
 
-RUN curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
-RUN unzip butler.zip
-
-# GNU unzip tends to not set the executable bit even though it's set in the .zip
-RUN chmod +x butler
-
-RUN export PATH=/opt/butler/bin/:$PATH
-
-RUN cd ~
-
-# just a sanity check run (and also helpful in case you're sharing CI logs)
-RUN ./butler -V
+RUN ./getbutler.sh
 
 ENV PATH="/opt/butler/bin:${PATH}"
