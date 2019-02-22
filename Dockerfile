@@ -9,8 +9,7 @@ RUN apt-get update \
 		ca-certificates
 
 ADD getbutler.sh /opt/butler/getbutler.sh
-
-#RUN chmod +x /opt/butler/getbutler.sh 
 RUN bash /opt/butler/getbutler.sh
+RUN butler -V
 
 ENV PATH="/opt/butler/bin:${PATH}"
