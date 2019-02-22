@@ -11,6 +11,6 @@ RUN apt-get update \
 
 ADD getbutler.sh ~/getbutler.sh
 
-RUN ./getbutler.sh
+RUN ~/getbutler.sh
 
 ENV PATH="/opt/butler/bin:${PATH}"
