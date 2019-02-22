@@ -11,6 +11,6 @@ RUN apt-get update \
 ADD getbutler.sh /opt/butler/getbutler.sh
 
 #RUN chmod +x /opt/butler/getbutler.sh 
-RUN ["/bin/bash" "-c" "source /opt/butler/getbutler.sh"]
+RUN bash /opt/butler/getbutler.sh
 
 ENV PATH="/opt/butler/bin:${PATH}"
