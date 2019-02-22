@@ -8,8 +8,8 @@ RUN apt-get update \
 		unzip \
 		ca-certificates
 
-ADD getbutler.sh /tmp/getbutler.sh
+ADD getbutler.sh /opt/butler/getbutler.sh
 
-RUN /tmp/getbutler.sh
+RUN /opt/butler/getbutler.sh
 
 ENV PATH="/opt/butler/bin:${PATH}"
