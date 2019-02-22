@@ -9,7 +9,7 @@ RUN apt-get update \
 		unzip \
 		ca-certificates
 
-ADD getbutler.sh
+ADD getbutler.sh ~/getbutler.sh
 
 RUN ./getbutler.sh
 
